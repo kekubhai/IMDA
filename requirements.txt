@@ -4,6 +4,7 @@ gradio
 langchain
 langchain-huggingface
 langchain-community
+langchain-chroma
 transformers
 chromadb
 sentence-transformers

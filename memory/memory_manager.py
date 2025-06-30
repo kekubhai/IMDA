@@ -1,6 +1,10 @@
 from langchain.memory import ConversationBufferMemory
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import SentenceTransformerEmbeddings
+try:
+    from langchain_chroma import Chroma
+    from langchain_huggingface import HuggingFaceEmbeddings
+except ImportError:
+    from langchain_community.vectorstores import Chroma
+    from langchain_community.embeddings import HuggingFaceEmbeddings
 import os
 
 class MemoryManager:
@@ -16,7 +20,7 @@ class MemoryManager:
         try:
             self.vector_db = Chroma(
                 persist_directory=persist_directory,
-                embedding_function=SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+                embedding_function=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
             )
         except Exception as e:
             print(f"Warning: Could not initialize Chroma vector DB: {e}")
