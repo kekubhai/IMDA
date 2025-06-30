@@ -1,0 +1,13 @@
+torch
+shap
+gradio
+langchain
+langchain-huggingface
+langchain-community
+transformers
+chromadb
+sentence-transformers
+pandas
+scikit-learn
+numpy
+huggingface_hub 
