@@ -19,7 +19,7 @@ HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN", "")
 
 # Initialize modules with error handling
 def initialize_components():
-    """Initialize all components with proper error handling"""
+    """Initializing all components with proper error handling"""
     components = {}
     
     # Initialize fault predictor
@@ -263,8 +263,8 @@ if __name__ == "__main__":
     print("=" * 60)
     
     demo.launch(
-        server_name="0.0.0.0",  # For Hugging Face Spaces
+        server_name="127.0.0.1",  # Use localhost for local development
         server_port=7860,
-        share=False,
+        share=False,  # Set to True if you want a public link
         show_error=True
     ) 
