@@ -266,5 +266,6 @@ if __name__ == "__main__":
         server_name="127.0.0.1",  # Use localhost for local development
         server_port=7860,
         share=False,  # Set to True if you want a public link
-        show_error=True
+        show_error=True,
+        inbrowser=True  # Automatically open browser
     ) 
