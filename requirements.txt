@@ -11,4 +11,5 @@ sentence-transformers
 pandas
 scikit-learn
 numpy
-huggingface_hub 
+huggingface_hub
+python-dotenv 

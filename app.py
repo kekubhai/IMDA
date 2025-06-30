@@ -2,15 +2,19 @@ import gradio as gr
 import numpy as np
 import os
 import traceback
+from dotenv import load_dotenv
 from models.fault_predictor import FaultPredictor
 from models.shap_explainer import SHAPExplainer
 from llm.repair_suggester import RepairSuggester
 from memory.memory_manager import MemoryManager
 from utils.data_utils import load_telemetry_data, validate_data, preprocess_data
 
+# Load environment variables
+load_dotenv()
+
 # Paths and configs (update as needed)
 MODEL_PATH = "assets/fault_model.pt"
-HUGGINGFACE_MODEL = "microsoft/DialoGPT-medium"  # More accessible model
+HUGGINGFACE_MODEL = os.getenv("HUGGINGFACE_MODEL", "microsoft/DialoGPT-medium")  # More accessible model
 HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN", "")
 
 # Initialize modules with error handling

@@ -1,6 +1,27 @@
 import torch
+import torch.nn as nn
 import numpy as np
 import os
+
+class FaultPredictionModel(nn.Module):
+    """
+    Simple neural network for fault prediction from telemetry data.
+    Expects 3 input features: temperature, pressure, vibration
+    """
+    def __init__(self, input_size=3, hidden_size=64):
+        super(FaultPredictionModel, self).__init__()
+        self.network = nn.Sequential(
+            nn.Linear(input_size, hidden_size),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.Linear(hidden_size, hidden_size // 2),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.Linear(hidden_size // 2, 1)
+        )
+    
+    def forward(self, x):
+        return self.network(x)
 
 class FaultPredictor:
     """
