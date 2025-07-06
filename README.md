@@ -8,7 +8,7 @@ IMDA is an AI-powered tool for predictive maintenance in industrial settings. It
 - LLM-powered repair suggestions (Hugging Face, LangChain)
 - Memory/context retention (LangChain, Chroma)
 - Gradio UI for interaction and feedback
-- Modular, well-commented code
+- Modular,well-commented code
 - Ready for Hugging Face Spaces deployment
 
 ## Setup
